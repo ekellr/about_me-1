@@ -6,8 +6,8 @@ var questionData = [
                     ["yesNo", "Is he a morning person?", "no", 1];
                     ["yesNo", "Is he from Seattle?", "no", 1];
                     ["yesNo", "Does he play the cello?", "no", 1];
-                    ["interval", "Does he play the cello?", "no", 4];
-                    ["multiple", "Does he play the cello?", "no", 6];
+                    ["interval", "What is his favarite number?", 42, 4];
+                    ["multiple", "", [2 ,["","",""]], 6];
                   ];
 
 // console.log(questionsData);
@@ -22,7 +22,7 @@ var scoreTotal = 0;
 // Finally, it pushes the user answer and score to arrays, and adds to score total
 for (i = 0; i < questionsData.length; i++)
   {
-    var questionInfo = questionData[1];
+    var questionInfo = questionData[i];
 
     var questionType = questionInfo[0];
     var question = questionInfo[1];
@@ -45,13 +45,12 @@ for (i = 0; i < questionsData.length; i++)
 
     else if (questionType === 'interval') {
       for (var i = numTries; i >= 0; i--){
-        var answer = prompt(question[1] + ' You get 4 tries.');
+        var answer = parseInt(prompt(question[1] + ' You get 4 tries.'));
 
-        if () {
-
-        } else if {
-
-        } else if {
+        if (answer < rightAnswer) {
+          alert('Answer too low!')
+        } else if (answer > rightAnswer){
+          alert('Answer too high!')
 
         } else {
 
@@ -61,12 +60,12 @@ for (i = 0; i < questionsData.length; i++)
     }
 
     else if (questionType === 'multiple') {
-      for (var i = numTries]; i >= 0; i--){
+      for (var i = numTries; i >= 0; i--){
 
         var answer = prompt(question[1] + ' Choose among these options: ' + rightAnswer);
 
 
-        
+
       }
     }
 
